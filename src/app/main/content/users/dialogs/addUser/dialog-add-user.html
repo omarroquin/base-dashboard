@@ -1,0 +1,32 @@
+<div id="dialog-add-user">
+  <md-form-field class="input-form">
+    <input mdInput placeholder="Name" [(ngModel)]="name">
+  </md-form-field>
+  <md-form-field class="input-form">
+    <input mdInput placeholder="Email" [(ngModel)]="email">
+  </md-form-field>
+  <md-form-field class="input-form">
+    <input mdInput placeholder="Password" [(ngModel)]="password">
+  </md-form-field>
+  <md-select placeholder="Type" [(ngModel)]="type">
+    <md-option [value]="1">
+      Admin User
+    </md-option>
+    <md-option [value]="2">
+      Normal User
+    </md-option>
+  </md-select>
+  <br><br>
+  <md-select placeholder="Client" [(ngModel)]="clientId">
+    <md-option *ngFor="let client of clients" [value]="client._id">
+      {{ client.name }}
+    </md-option>
+  </md-select>
+  <br><br>
+  <button md-raised-button
+          class="btm-add-stage"
+          color="accent"
+          (click)="onSubmit()">
+    Add Stage
+  </button>
+</div>

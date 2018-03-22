@@ -1,0 +1,46 @@
+<div id="stages-page" class="page-layout blank p-24" fusePerfectScrollbar>
+
+    <div class="header">
+      <h2>Stages</h2>
+      <button md-raised-button
+              class="btm-add-stage"
+              color="accent"
+              (click)="addStage()">
+        Add Stage
+      </button>
+    </div>
+
+    <ngx-datatable
+        class="material"
+        [rows]="rows"
+        [loadingIndicator]="loadingIndicator"
+        [columnMode]="'force'"
+        [headerHeight]="48"
+        [footerHeight]="56"
+        [rowHeight]="'auto'"
+        [reorderable]="reorderable"
+        [limit]="10">
+
+        <ngx-datatable-column name="Name" prop="name">
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Order" prop="order">
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [sortable]="false" name="Actions">
+          <ng-template ngx-datatable-cell-template let-row="row">
+            <button md-mini-fab color="primary" [routerLink]="['/stages', row._id]">
+              <md-icon class="md-24" aria-label="Edit">
+                edit
+              </md-icon>
+            </button>
+            <button md-mini-fab color="warn">
+              <md-icon class="md-24" aria-label="Edit" (click)="removeStage(row)">
+                delete
+              </md-icon>
+            </button>
+          </ng-template>
+        </ngx-datatable-column>
+    </ngx-datatable>
+
+</div>

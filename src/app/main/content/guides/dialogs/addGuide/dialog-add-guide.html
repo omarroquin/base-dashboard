@@ -1,0 +1,23 @@
+<div id="dialog-add-guide">
+  <md-form-field class="input-form">
+    <input mdInput placeholder="Nombre" [(ngModel)]="guide.name">
+  </md-form-field>
+  <md-form-field class="input-form">
+    <input mdInput placeholder="Orden" [(ngModel)]="guide.order">
+  </md-form-field>
+  <md-form-field class="input-form">
+    <textarea mdInput placeholder="Proposito" [(ngModel)]="guide.purpose"></textarea>
+  </md-form-field>
+  <md-form-field class="input-form">
+    <textarea mdInput placeholder="Utilidad" [(ngModel)]="guide.utility"></textarea>
+  </md-form-field>
+  <md-form-field class="input-form">
+    <textarea mdInput placeholder="Area" [(ngModel)]="guide.area"></textarea>
+  </md-form-field>
+  <button md-raised-button
+          class="btm-add-stage"
+          color="accent"
+          (click)="onSubmit()">
+    Add Stage
+  </button>
+</div>

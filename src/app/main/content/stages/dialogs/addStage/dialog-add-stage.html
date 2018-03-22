@@ -1,0 +1,14 @@
+<div class="">
+  <md-form-field>
+    <input mdInput placeholder="Stage name" [(ngModel)]="name">
+  </md-form-field>
+  <md-form-field>
+    <input mdInput placeholder="Order" [(ngModel)]="order">
+  </md-form-field>
+  <button md-raised-button
+          class="btm-add-stage"
+          color="accent"
+          (click)="onSubmit()">
+    Add Stage
+  </button>
+</div>
